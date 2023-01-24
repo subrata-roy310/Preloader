@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.hero-area {
+    height: 100vh;
+    background-image: url(img/images.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-area h2 {
+    color: black;
+    font-size: 45px;
+}
+
+.hero-area a {
+    display: inline-block;
+    background-color: #fff;
+    color: #333;
+    padding: 12px 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 25px;
+}
+
+/* preloader-area CSS */
+#preloader-area {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#preloader-area::after,
+#preloader-area::before {
+    position: absolute;
+    content: "";
+    width: 50%;
+    height: 100%;
+    background-color: #111;
+    z-index: -1;
+    transition: 0.5s ease-in-out;
+}
+
+#preloader-area::before {
+    left: 0;
+}
+
+#preloader-area::after {
+    right: 0;
+}
+
+.page-loaded .spinner-border {
+    display: none;
+}
+
+#preloader-area.page-loaded::before {
+    left: -50%;
+}
+
+#preloader-area.page-loaded::after {
+    right: -50%;
+}
